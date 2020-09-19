@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
 
 function App() {
+  const [value, setValue] = useState(0)
+// value = 0;
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className="increment">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {value}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <button onClick={()=> { setValue(value + 1) }}>increase</button>
+        <button onClick={()=> { setValue(value - 1) }}>decrease</button>
+
       </header>
     </div>
   );
 }
 
 export default App;
+
+
+
+// function increase_no(){
+//   // return value
+//   // document.getElementById("value").innerHTML = i;
+//   var value = parseInt(document.getElementById('number').value, 10);
+//   value += 1
+//   document.getElementById('number').value = value;
+// }
+
+// function decrease_no(){
+//   var value = parseInt(document.getElementById('number').value, 10);
+//   value -= 1
+//   document.getElementById('number').value = value;
+// }
